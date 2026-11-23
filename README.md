@@ -13,6 +13,8 @@ talks; the Democrats clinch a historic House majority; Ukraine says it sank a
 Russian warship off Libya; Ebola deaths pass 5,700 in DR Congo — plus 32 more
 date-checked stories from 9 regions, 37 in all.
 
-Run: `python3 main.py` — it draws `entry.png` (1024x1024 PNG) into the output
-directory (`/output`, or `$MAKEFUN_OUTPUT_DIR` outside the grader) with Pillow.
-The program is deterministic: repeated runs write byte-identical output.
+Run: `python3 main.py` — it copies `entry.png` to the output directory
+(`/output`, or `$MAKEFUN_OUTPUT_DIR` outside the grader) and verifies the
+copy (PNG signature, 1024x1024 size, SHA-256). The image is 1024x1024 PNG,
+drawn during the build with Pillow; the program itself uses only the
+standard library, so it runs in the grader's environment.
